@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  pub_key_admin:
+    build: .
+    stdin_open: true
+    tty: true
+    command: rails s -b 0.0.0.0
+    ports:
+      - 3000:3000
+    environment:
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
+      BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap
+    volumes:
+      - .:/pub_key_admin
+      - bundle_volume:/vendor/bundle
+      - rails_cache:/app/tmp/caches
+      - node_modules:/app/node_modules
+    tmpfs:
+      - /tmp
+      - /app/tmp/pidskk
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13.7
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: pub_key_admin
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+
+volumes:
+  db_volume:
+  bundle_volume:
+  node_modules:
+  rails_cache:
