@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    @page_name = "Members and public keys"
     @users = User.all
   end
 
