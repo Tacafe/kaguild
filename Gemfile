@@ -9,6 +9,7 @@ gem "jbuilder"
 gem "pg"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.3"
+gem 'semantic-ui-sass'
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
