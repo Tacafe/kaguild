@@ -3,7 +3,7 @@
 <h1>Users</h1>
 
 <div id="users">
-  <%= link_to "New user", new_user_path %>
+  <%= button_to "New", {controller: 'users', action: 'new'}, {method: :get, class: "ui primary button"} %>
   <table>
     <thead>
       <th>名前</th>
@@ -11,6 +11,7 @@
       <th>所属チーム</th>
       <th>雇用形態</th>
       <th>email</th>
+      <th></th>
     </thead>
     <tbody>
       <% @users.each do |user| %>
@@ -20,6 +21,11 @@
           <td><%= user.team %></td>
           <td><%= user.employment %></td>
           <td><%= user.email %></td>
+          <td>
+            <button class="ui primary button">
+              Sync Github
+            </button>
+          </td>
         </tr>
       <% end %>
     </tbody>
