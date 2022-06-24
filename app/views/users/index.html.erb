@@ -3,7 +3,7 @@
 <h1>Users</h1>
 
 <div id="users">
-  <%= button_to "New", {controller: 'users', action: 'new'}, {method: :get, class: "ui primary button"} %>
+  <%= button_to "New", {controller: 'users', action: 'new'}, {method: :get, class: "btn btn-primary"} %>
   <table>
     <thead>
       <th>名前</th>
@@ -22,7 +22,7 @@
           <td><%= user.employment %></td>
           <td><%= user.email %></td>
           <td>
-            <button class="ui primary button">
+            <button>
               Sync Github
             </button>
           </td>
