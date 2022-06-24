@@ -3,12 +3,26 @@
 <h1>Users</h1>
 
 <div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+  <%= link_to "New user", new_user_path %>
+  <table>
+    <thead>
+      <th>名前</th>
+      <th>githubアカウント</th>
+      <th>所属チーム</th>
+      <th>雇用形態</th>
+      <th>email</th>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to "#{user.name}", user %></td>
+          <td><%= user.github_account %></td>
+          <td><%= user.team %></td>
+          <td><%= user.employment %></td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New user", new_user_path %>
