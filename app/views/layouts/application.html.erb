@@ -11,9 +11,17 @@
   </head>
 
   <body>
-    <div class="ui container">
-
+    <div class="navbar navbar-dark sticky-top bg-dark d-flex flex-row justify-content-start">
+      <div style="width:70px;">
+        <%= image_tag "/assets/nankin_key.png" %>
+      </div>
+      <div style="color:RGB(170,170,170);width:500px;">
+        <H2 class="mb-0"><%= @page_name %></H2>
+      </div>
     </div>
-    <%= yield %>
+
+    <div class="px-3">
+      <%= yield %>
+    </div>
   </body>
 </html>
