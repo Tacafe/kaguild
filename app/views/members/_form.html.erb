@@ -1,10 +1,10 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
+<%= form_with(model: member) do |form| %>
+  <% if member.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
 
       <ul>
-        <% user.errors.each do |error| %>
+        <% member.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -29,6 +29,11 @@
   <div>
     <%= form.label :employment, style: "display: block" %>
     <%= form.text_field :employment %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.email_field :email %>
   </div>
 
   <div>

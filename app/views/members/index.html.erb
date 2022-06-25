@@ -5,11 +5,11 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search public key" aria-label="Search">
   </div>
   <div>
-    <%= button_to "新メンバーを追加", {controller: 'users', action: 'new'}, {method: :get, class: "btn btn-primary"} %>
+    <%= button_to "新メンバーを追加", {controller: 'members', action: 'new'}, {method: :get, class: "btn btn-primary"} %>
   </div>
 </div>
 
-<div id="users">
+<div id="members">
   <table class="table table-striped table-hover">
     <thead>
       <th>名前</th>
@@ -20,13 +20,13 @@
       <th></th>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @members.each do |member| %>
         <tr>
-          <td><%= link_to "#{user.name}", user %></td>
-          <td><%= user.github_account %></td>
-          <td><%= user.team %></td>
-          <td><%= user.employment %></td>
-          <td><%= user.email %></td>
+          <td><%= link_to "#{member.name}", member %></td>
+          <td><%= member.github_account %></td>
+          <td><%= member.team %></td>
+          <td><%= member.employment %></td>
+          <td><%= member.email %></td>
           <td><button class="btn btn-outline-danger btn-sm">削除</button></td>
         </tr>
       <% end %>
