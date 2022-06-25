@@ -5,9 +5,11 @@ one:
   github_account: MyString
   team: MyString
   employment: MyString
+  email: MyString
 
 two:
   name: MyString
   github_account: MyString
   team: MyString
   employment: MyString
+  email: MyString
