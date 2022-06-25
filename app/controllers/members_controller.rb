@@ -66,6 +66,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:name, :github_account, :team, :employment)
+      params.require(:member).permit(:name, :github_account, :team, :employment, :email)
     end
 end
