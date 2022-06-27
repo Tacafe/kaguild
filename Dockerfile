@@ -1,6 +1,6 @@
 FROM ruby:3.1.2
 
-ENV ROOT="/pub_key_admin"
+ENV ROOT="/kaguild"
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 

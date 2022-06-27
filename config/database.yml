@@ -6,7 +6,7 @@ default: &default
 
 development:
   <<: *default
-  username: pub_key_admin
+  username: kaguild
   password: admin_password
   database: development
 
@@ -15,7 +15,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: pub_key_admin
+  username: kaguild
   password: admin_password
   database: test
 
