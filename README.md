@@ -1,24 +1,30 @@
-# README
+# kaguild
+「公開鍵(kagi)」に含めたい「技術者の集団(guild)」を管理して、サーバーにログインできる人を限る（「限る人」）ためのツール `kaguild` です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 主な機能
+- 鍵に含められるメンバーや、チームを管理します
+- 特定のチームやメンバーをひとまとめにした、公開鍵のファイル(authorized_keys)を生成、管理します。
 
-Things you may want to cover:
+## 依存関係
+- docker
+- docker-compose
+- git
 
-* Ruby version
+## 開発環境(ローカル)の準備と起動
+```bash
+  # このリポジトリをcloneする
+  git clone https://github.com/Tacafe/kaguild.git
 
-* System dependencies
+  # imageの取得及びbuild
+  docker-compose build
 
-* Configuration
+  # development databaseの作成
+  docker-compose run --rm kaguild rails db:create db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  # サービスの起動
+  docker-compose up -d
+```
+- 起動
+```bash
+  docker-compose up -d
+```
